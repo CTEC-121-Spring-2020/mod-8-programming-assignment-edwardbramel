@@ -4,7 +4,7 @@
 
 # Your code below
 
-
+''''
 class Cars:
     def __init__(self, make, model, year):
         self.make = make
@@ -27,25 +27,49 @@ def testcar():
 
 
 testcar()
-# testing
 '''
+# testing
+
 # this is what you want
 
 
-class Cars:
+class car:
     def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
+        self._make = make
+        self._model = model
+        self._year = year
+
+    def setmake(self, make):
+        self._make = make
+
+    def getmake(self):
+        return self._make
+
+    def setmodel(self, model):
+        self._model = model
+
+    def getmodel(self):
+        return self._model
+
+    def setyear(self, year):
+        self._year = year
+
+    def getyear(self):
+        return self._year
 
 
-def carlot():
-    car1make = "ford"
-    car1model = "gt"
-    car1year = "2007"
-    print("the first car is,", car1make, "the model of it is,",
-          car1model, " and the year for car 1 is", car1year)
+def test():
+    carlot = []
+    carlot.append(car("ford", "gt", "2007"))
+    carlot.append(car("chevy", "torndado", "2002"))
+    carlot.append(car("subaru", "wrx", "2009"))
+    carlot.append(car("nissian", "gtr", "2017"))
+    carlot.append(car("toyota", "86", "1990"))
+    for element in carlot:
+        print(element.getmake())
+        print(element.getmodel())
+        print(element.getyear())
 
 
-carlot()
-'''
+if __name__ == "__main__":
+    test()

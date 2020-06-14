@@ -38,7 +38,7 @@ def main():
 '''
 
 
-class student:
+class Student:
     def __init__(self, name, ID, major, GPA):
         self.name = name
         self.ID = ID
@@ -71,7 +71,28 @@ class student:
 
 
 def test():
-    student1.append(student("Joe Bella", "9933", "Web Dev", "3.8"))
-    student2.append(student("Tucker", "Blank", "3399", "Nursing", "3.0"))
-    student3.append(student("Gayle Ujifusa", "1011", "Baking", "2.8"))
-    student4.append(student("Edna Anker", "9875", "Medical Office", "3.0"))
+    studentlist = []
+    studentlist.append(Student("Joe Bella", "9933", "web dev", "3.8"))
+    studentlist.append(Student("Tucker", "3399", "nursing", "3.0"))
+    studentlist.append(Student("Gayle Ujifusa", "1011", "baking", "2.8"))
+    studentlist.append(Student("Edna Anker", "9875", "medical office", "3.0"))
+
+    studentlist[0].setmajor("Web Dev")
+    studentlist[1].setmajor("Nursing")
+    studentlist[2].setmajor("Baking")
+    studentlist[3].setmajor("Medical Office")
+
+    studentlist[0].setGPA("3.8")
+    studentlist[1].setGPA("3.0")
+    studentlist[2].setGPA("2.8")
+    studentlist[3].setGPA("3.0")
+
+    for element in studentlist:
+        print(element.getname())
+        print(element.getID())
+        print(element.getmajor())
+        print(element.getGPA())
+
+
+if __name__ == "__main__":
+    test()
